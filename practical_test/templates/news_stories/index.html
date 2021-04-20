@@ -1,0 +1,20 @@
+{% extends 'news_stories/base.html' %}
+
+{% block content %}
+    <h1 class="text-center mb-3">News Stories</h1>
+    {% if latest_post_list %}
+        {% for post in latest_post_list %}
+            <div class="card mb-3">
+                <div class=cardbody">
+                    <p class="lead"> {{ post.post_heading }} </p>
+                    <p class="lead"> {{ post.pub_date }} </p>
+                    <p class="lead"> {{ post.post_text }} </p>
+                </div>
+            </div>
+
+        {% endfor %}
+    {% else %}
+        <p>No posts available</p>
+    {% endif %}
+{% endblock %}
+
